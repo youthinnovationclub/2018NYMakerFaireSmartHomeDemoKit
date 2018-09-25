@@ -1,0 +1,85 @@
+<!DOCTYPE html> <!--Change from localhost.-->
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <div class="top">
+            <b>Last Refreshed on {{timestamp}}</b>
+            <center>
+                <h1>Welcome to your Dashboard!</h1>
+            </center>
+        </div>
+
+        <div class="grid-container" align="center">
+            <div class="Security">
+                <h3>Security</h3>
+                
+                <form action="http://127.0.0.1:5000/sectoggle/" method="post">
+                    <button name="toggle" type="submit">Toggle</button>
+                </form>
+                <!--If you wanted to get out of the house without an email.-->
+            </div>
+
+            <div class="Temperature">
+                <h3>Temperature</h3>
+		<p>{{temp}}</p>
+                <form action="http://127.0.0.1:5000/temtoggle/" method="post">
+                    <button name="toggle" type="submit">Toggle</button>
+                </form>
+            </div>
+
+            <div class="camera">
+                <h3>Camera</h3> <!--Change link to other RPi-->
+                <button onclick="location.href='http://127.0.0.1:5000/camera/';">View Camera</button>
+            </div>
+            
+            <div class="Filler">
+                <h3>
+                    This is RaPIdaSH!
+                </h3>
+                <p>RaPIdaSH stands for Raspberry PI Smart Home.</p>
+                <p>Click on any of the buttons to toggle the features of the house!</p>
+            </div>
+        </div>
+    </body>
+    
+    <style>
+	* {
+    	    box-sizing: border-box;
+	    padding: 2px;
+	}
+        .grid-container {
+            display: grid;
+            height: 100%;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 5px;
+            grid-template-areas: "Security Temperature" "Camera Filler";
+        }
+        .Security { grid-area: Security;background-color: {{security}} }
+        .Temperature { grid-area: Temperature;background-color: {{temperature}} }
+        .Camera { grid-area: Camera;background-color: {{purple}} }
+        .Filler { grid-area: Filler;background-color: {{purple}} }
+    </style>
+    
+    <script>
+        if (document.location.href != "http://127.0.0.1:5000/") document.location.reload();
+        document.bgColor = "skyblue";
+    </script>
+
+</html>
+                          <!---->
+                        <!--   -->
+                      <!--  ___  -->
+                    <!--   /---\   -->
+                  <!--     \_O_/     -->
+                <!--                   -->
+              <!--         There         -->
+            <!--          Was a man        -->
+          <!--          Who lived and        -->
+        <!--         died, breathing and       -->
+      <!--        uttering words, words that     -->
+    <!--       had real meaning to them. In the    -->
+  <!--     end, it hadn't mattered at all. He died.   -->
+<!-------------------------------------------------------->
