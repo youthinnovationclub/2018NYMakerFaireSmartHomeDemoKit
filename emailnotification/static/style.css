@@ -1,0 +1,26 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+    grid-template-areas: "Security Temperature" "Camera";
+}
+
+.security {
+    grid-area: security;
+    background-color: {{security}};
+}
+
+.temperature {
+    grid-area: temperature;
+    background-color: {{temperature}};
+}
+.camera {
+    grid-area: camera;
+    background-color: {{camera}};
+}
